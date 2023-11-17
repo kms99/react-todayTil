@@ -1,30 +1,29 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import * as S from "./TilList.styled";
+import TilListItem from "./TilListItem";
 
 const TilList = () => {
   let tilList = useSelector((state) => state.TilList.tilList);
+
   const selectedDate = useSelector(
     (state) => state.TilList.currentWriteTil.date
   );
 
-  if (selectedDate) {
+  if (selectedDate)
     tilList = tilList.filter((til) => til.date === selectedDate) || [];
-  }
   return (
-    <div>
-      <ul>
-        {tilList.map((til) => {
-          return (
-            <li key={til.id}>
-              <p>{til.date}</p>
-              <h2>{til.title}</h2>
-              <p>{til.context}</p>
-              <p>{til.tilCondition}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <S.ListWrapper>
+      <h2>
+        {selectedDate ? `${selectedDate}` : "전체기간"} 작성된 TIL은 모두
+        {tilList.length} 건 입니다.
+      </h2>
+      <S.StUl>
+        {tilList.map((til) => (
+          <TilListItem key={til.id} info={til} />
+        ))}
+      </S.StUl>
+    </S.ListWrapper>
   );
 };
 

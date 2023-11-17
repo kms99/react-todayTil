@@ -1,13 +1,8 @@
 import React from "react";
 import WriteModalRadio from "./WriteModalRadio";
 import * as S from "./WriteModal.styled";
+import { radios } from "../../../common";
 
-const radios = [
-  { value: 0, text: "좋음" },
-  { value: 1, text: "보통" },
-  { value: 2, text: "나쁨" },
-  { value: 3, text: "매우나쁨" },
-];
 const WriteModalRadioContainer = () => {
   return (
     <S.StConditionRadioContainer>

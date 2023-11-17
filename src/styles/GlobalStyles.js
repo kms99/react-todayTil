@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 62.5%;
     }
 
-    header,div,input,label,textarea{
+    header,div,input,label,textarea, li{
         box-sizing: border-box;
     }
     /* HTML5 display-role reset for older browsers */
