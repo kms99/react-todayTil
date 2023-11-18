@@ -9,6 +9,9 @@ const TIL_SET_DATE = "TIL_SET_DATE";
 const TIL_SET_TITLE = "TIL_SET_TITLE";
 const TIL_SET_CONTEXT = "TIL_SET_CONTEXT";
 
+const DELETE_TIL = "DELETE_TIL";
+const EDIT_TIL = "EDIT_TIL";
+
 export const writeModalToggle = () => {
   return {
     type: WRITE_BTN_TOGGLE,
@@ -40,6 +43,20 @@ export const setTilTitle = (payload) => {
 export const setTilContext = (payload) => {
   return {
     type: TIL_SET_CONTEXT,
+    payload,
+  };
+};
+
+export const deleteTil = (payload) => {
+  return {
+    type: DELETE_TIL,
+    payload,
+  };
+};
+
+export const editTil = (payload) => {
+  return {
+    type: EDIT_TIL,
     payload,
   };
 };
@@ -91,6 +108,19 @@ const TilList = (state = initState, { type, payload }) => {
             tilList: [...state.tilList, newTil],
           }
         : state;
+    case DELETE_TIL:
+      return {
+        ...state,
+        tilList: state.tilList.filter((til) => til.id !== payload),
+      };
+    case EDIT_TIL:
+      return {
+        ...state,
+        tilList: state.tilList.map((til) => {
+          if (til.id === payload.id) return payload;
+          else return til;
+        }),
+      };
     default:
       return state;
   }

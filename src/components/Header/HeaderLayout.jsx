@@ -3,9 +3,12 @@ import * as S from "./HeaderLayout.styled";
 import { setTilDate, writeModalToggle } from "../../redux/modules/TilList";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../redux/modules/Theme";
+import Button from "../Common/Button";
+import DateInput from "../Common/DateInput";
 
 const HeaderLayout = ({ children }) => {
   const dispatch = useDispatch();
+  const mode = useSelector((state) => state.Theme.theme);
   const toggleBtnClickHandler = () => {
     dispatch(writeModalToggle());
   };
@@ -19,10 +22,14 @@ const HeaderLayout = ({ children }) => {
   return (
     <S.Wrapper>
       <S.StHeader>
-        <button onClick={themeChangeHandler}>modeChange</button>
+        <S.StChangeBtn onClick={themeChangeHandler} $mode={mode} />
         <h1>Today's TIL</h1>
-        <input type="date" value={dateValue} onChange={setDateHandler} />
-        <button onClick={toggleBtnClickHandler}>작성하기</button>
+        <DateInput value={dateValue} handler={setDateHandler} />
+        <Button
+          handler={toggleBtnClickHandler}
+          buttonText="작성하기"
+          style={{ padding: "0.5rem 2rem", fontSize: "2rem" }}
+        />
       </S.StHeader>
       {children}
     </S.Wrapper>

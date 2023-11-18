@@ -1,3 +1,6 @@
+import dark from "./image/themeMode/dark.svg";
+import light from "./image/themeMode/light.svg";
+
 const darkTheme = {
   background: "#17171d",
   headerBackgroundColor: "#05151f",
@@ -8,7 +11,8 @@ const darkTheme = {
   modalActiveBackgroundColor: "#6c6c62",
   listBackGround: "transparent",
   listHoverBackGround: "#474952",
-  radioButtonColor :"#ece2cf",
+  radioButtonColor: "#ece2cf",
+  modeBtn: dark,
 };
 
 const lightTheme = {
@@ -21,7 +25,8 @@ const lightTheme = {
   modalActiveBackgroundColor: "#FFF",
   listBackGround: "#e5bfb4",
   listHoverBackGround: "#dfe6eb",
-  radioButtonColor :"#cf4d10",
+  radioButtonColor: "#cf4d10",
+  modeBtn: light,
 };
 
 export default { dark: darkTheme, light: lightTheme };

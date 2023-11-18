@@ -14,7 +14,10 @@ const WriteModal = () => {
   return (
     <S.ModalWrapper $toggleModal={toggleModal}>
       <S.StWriteModal>
-        <S.StCloseBtn onClick={toggleBtnClickHandler}>닫기</S.StCloseBtn>
+        <S.StCloseBtn onClick={toggleBtnClickHandler}>
+          <div />
+          <div />
+        </S.StCloseBtn>
         <WriteModalForm />
       </S.StWriteModal>
     </S.ModalWrapper>

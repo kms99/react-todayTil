@@ -6,12 +6,17 @@ import WriteModalRadioContainer from "./WriteModalRadioContainer";
 import { useDispatch } from "react-redux";
 import { setNewTil } from "../../../redux/modules/TilList";
 import WriteModalDateInput from "./WriteModalDateInput";
+import { useNavigate } from "react-router-dom";
+import Button from "../Button";
 
 const WriteModalForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const writeTilSubmitHandler = (e) => {
     e.preventDefault();
     dispatch(setNewTil());
+    navigate("/");
   };
 
   return (
@@ -20,7 +25,10 @@ const WriteModalForm = () => {
       <WriteModalTitleInput />
       <WriteModalCommentTextarea />
       <WriteModalRadioContainer />
-      <button>작성하기</button>
+      <Button
+        buttonText="작성완료"
+        style={{ padding: "0.5rem 2rem", fontSize: "2rem" }}
+      />
     </S.StWriteModalForm>
   );
 };

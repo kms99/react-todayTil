@@ -43,7 +43,7 @@ export const StList = styled.li`
     background-color: ${(props) => props.theme.listHoverBackGround};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     flex-direction: column;
     height: 15rem;
     justify-content: flex-start;
@@ -58,7 +58,7 @@ export const StDate = styled.span`
   height: 80%;
   display: flex;
   align-items: center;
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     height: auto;
     font-size: 1.3rem;
     border: none;
@@ -72,19 +72,23 @@ export const StListTitle = styled.h2`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     font-size: 2.3rem;
     max-width: 100%;
     margin-top: 2rem;
   }
 `;
 export const StCondition = styled.span`
+  min-width: 14rem;
   border-left: 3px solid ${(props) => props.theme.borderColor};
   padding-left: 2rem;
   height: 80%;
   display: flex;
   align-items: center;
-  @media (max-width: 768px) {
+  & svg {
+    margin-right: 1rem;
+  }
+  @media (max-width: 1100px) {
     height: auto;
     font-size: 1.5rem;
     border: none;

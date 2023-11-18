@@ -24,8 +24,11 @@ const GlobalStyles = createGlobalStyle`
     html{
         font-size: 62.5%;
     }
+    html::-webkit-scrollbar{
+        width: 0;
+    }
 
-    header,div,input,label,textarea, li{
+    header,div,input,label,textarea, li,button,p{
         box-sizing: border-box;
     }
     /* HTML5 display-role reset for older browsers */
