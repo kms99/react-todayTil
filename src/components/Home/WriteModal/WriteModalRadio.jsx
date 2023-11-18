@@ -13,7 +13,10 @@ const WriteModalRadio = ({ radio }) => {
 
   return (
     <div>
-      <label htmlFor={radio.value}>{radio.text}</label>
+      <label htmlFor={radio.value}>
+        <img src={radio.imgUrl} />
+        <span>{radio.text}</span>
+        </label>
       <input
         id={radio.value}
         type="radio"

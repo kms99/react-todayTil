@@ -16,12 +16,13 @@ export const StWriteModal = styled.div`
   justify-content: center;
   position: absolute;
   width: 80vw;
-  height: 80vh;
+  height: auto;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   background-color: ${(props) => props.theme.modalBackgroundColor};
   border-radius: 20px;
+  padding:4rem 0 2rem 0;
   color: ${(props) => props.theme.color};
 
   @media (max-width: 768px) {
@@ -60,7 +61,7 @@ export const StWriteModalFormDate = styled.div`
   & > div input {
     font-size: inherit;
     margin-top: 0.5rem;
-    background-color: transparent;
+    background-color: ${(props) => props.theme.modalActiveBackgroundColor};
     border: 2px solid ${(props) => props.theme.borderColor};
     outline: none;
     border-radius: 5px;
@@ -69,10 +70,6 @@ export const StWriteModalFormDate = styled.div`
     cursor: pointer;
   }
 
-  & > div input:active,
-  & > div input:focus {
-    background-color: ${(props) => props.theme.modalActiveBackgroundColor};
-  }
   & > span {
     font-size: 4rem;
     font-weight: bold;
@@ -81,9 +78,12 @@ export const StWriteModalFormDate = styled.div`
   @media (max-width: 768px) {
     margin-top: 8rem;
     & > div {
-      top: -100%;
+      top: -150%;
       font-size: 1.2rem;
     }
+    & > span {
+    font-size: 3rem;
+  }
   }
 `;
 
@@ -96,7 +96,7 @@ export const StCloseBtn = styled.button`
 export const StTitleInputContainer = styled.div`
   position: relative;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   & input {
     height: 5rem;
     width: 100%;
@@ -128,8 +128,10 @@ export const StTitleInputContainer = styled.div`
 `;
 
 export const StTitleCommentAreaContainer = styled.div`
+position: relative;
   width: 100%;
-  height: 50%;
+  height: 20rem;
+  margin-bottom: 2rem;
   & textarea {
     height: 4rem;
     width: 100%;
@@ -153,6 +155,8 @@ export const StTitleCommentAreaContainer = styled.div`
 
   & label {
     font-size: 2rem;
+    position: absolute;
+    top: -2rem;
   }
 `;
 
@@ -170,6 +174,39 @@ export const StConditionRadioContainer = styled.div`
     margin-top: 2rem;
     display: flex;
     justify-content: space-around;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+  }
+  & > div> div{
+    position: relative;
+  }
+  & label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  & label span {
+    margin-top:0.5rem;
+  }
+  & input{
+    appearance: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+    cursor: pointer;
+  }
+  & input:hover,
+  & input:active{
+    border: 2px solid${props=>props.theme.radioButtonColor};
+  }
+  & input:checked{
+    background-color: ${props=>props.theme.radioButtonColor};
+    opacity: 0.3;
   }
 `;

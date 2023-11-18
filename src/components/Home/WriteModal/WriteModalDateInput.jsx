@@ -15,7 +15,7 @@ const WriteModalDateInput = () => {
         <label>날짜 선택</label>
         <input type="date" value={dateValue} onChange={setDateHandler} />
       </div>
-      <span>{dateValue}</span>
+      <span>{dateValue||"날짜를 선택하세요"}</span>
     </S.StWriteModalFormDate>
   );
 };

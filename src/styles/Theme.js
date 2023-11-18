@@ -4,10 +4,11 @@ const darkTheme = {
   mainBackgroundColor: "#05151f",
   color: "#fffbd9",
   borderColor: "#49736b",
-  modalBackgroundColor: "#7f7875",
+  modalBackgroundColor: "#051429",
   modalActiveBackgroundColor: "#6c6c62",
   listBackGround: "transparent",
-  listHoverBackGround: "#948f8d",
+  listHoverBackGround: "#474952",
+  radioButtonColor :"#ece2cf",
 };
 
 const lightTheme = {
@@ -20,6 +21,7 @@ const lightTheme = {
   modalActiveBackgroundColor: "#FFF",
   listBackGround: "#e5bfb4",
   listHoverBackGround: "#dfe6eb",
+  radioButtonColor :"#cf4d10",
 };
 
 export default { dark: darkTheme, light: lightTheme };
