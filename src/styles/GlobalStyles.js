@@ -40,6 +40,8 @@ const GlobalStyles = createGlobalStyle`
         line-height: 1;
         background-color: ${(props) => props.theme["background"]};
         transition: background-color 0.5s;
+        font-family: 'IBMMedium';
+        letter-spacing: 2px;
     }
     ol, ul {
         list-style: none;

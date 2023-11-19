@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import Theme from "../styles/Theme";
 import { useSelector } from "react-redux";
 import HeaderLayout from "../components/Header/HeaderLayout";
+import GlobalFont from "../styles/fonts";
 
 const Router = () => {
   const theme = useSelector((state) => state.Theme.theme);
@@ -14,6 +15,7 @@ const Router = () => {
     <BrowserRouter>
       <ThemeProvider theme={Theme[theme]}>
         <GlobalStyles />
+        <GlobalFont />
         <HeaderLayout>
           <Routes>
             <Route path="/" element={<Home />} />

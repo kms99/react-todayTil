@@ -7,6 +7,7 @@ import { ReactComponent as Delete } from "../../styles/image/detailBtn/delete.sv
 import { ReactComponent as Edit } from "../../styles/image/detailBtn/edit.svg";
 import { ReactComponent as EditDone } from "../../styles/image/detailBtn/editDone.svg";
 import { ReactComponent as EditDismiss } from "../../styles/image/detailBtn/editDismiss.svg";
+import { ReactComponent as Home } from "../../styles/image/detailBtn/home.svg";
 import DetailButton from "./DetailButton";
 import { deleteTil, editTil } from "../../redux/modules/TilList";
 
@@ -75,7 +76,13 @@ const DetailContainer = () => {
   const ConditionImg = radios[findTilData.tilCondition].imgTag;
   return (
     <S.StDetailWrapper>
-      <Link to="/">홈으로</Link>
+      <Link to="/">
+        <div>
+          <Home />
+          <span>홈으로</span>
+        </div>
+      </Link>
+
       <S.StFirstLine>
         <div>
           <span>{findTilData.date}</span>

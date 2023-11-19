@@ -23,6 +23,13 @@ export const StHeader = styled.header`
     margin-bottom: 2rem;
     font-size: 4rem;
     font-weight: bold;
+    cursor: pointer;
+    font-family: "AgbalumoRegular";
+  }
+  & h1:hover,
+  & h1:active {
+    color: ${(props) => props.theme.listHoverBackGround};
+    transition: color 0.5s;
   }
   & input {
     font-size: 2rem;

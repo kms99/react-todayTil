@@ -11,7 +11,13 @@ export const StDetailWrapper = styled.div`
   & a {
     font-size: 2rem;
     text-decoration: none;
-    color: ${(props) => props.theme.color};
+    color: inherit;
+    display: inline-block;
+  }
+
+  & a div {
+    display: flex;
+    align-items: center;
   }
 
   & a:hover,
