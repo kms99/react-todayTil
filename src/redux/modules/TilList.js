@@ -1,14 +1,11 @@
 import { validationCheck } from "../../common";
 import { v4 as uuidv4 } from "uuid";
-
 const WRITE_BTN_TOGGLE = "WRITE_BTN_TOGGLE";
 const SET_NEW_TIL = "SET_NEW_TIL";
-
 const TIL_SELECTED_CONDITION = "TIL_SELECTED_CONDITION";
 const TIL_SET_DATE = "TIL_SET_DATE";
 const TIL_SET_TITLE = "TIL_SET_TITLE";
 const TIL_SET_CONTEXT = "TIL_SET_CONTEXT";
-
 const DELETE_TIL = "DELETE_TIL";
 const EDIT_TIL = "EDIT_TIL";
 

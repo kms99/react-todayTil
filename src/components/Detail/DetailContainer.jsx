@@ -36,12 +36,14 @@ const DetailContainer = () => {
   const EditModeToggleHandler = () => {
     setIsEditMode((prev) => (prev ? false : true));
   };
+
   const EditModeDismissHandler = () => {
     if (window.confirm("모든 수정사항을 취소하시겠습니까?")) {
       setEditValue({ title: findTilData.title, context: findTilData.context });
       setIsEditMode((prev) => (prev ? false : true));
     } else return;
   };
+
   const EditModeDoneHandler = () => {
     if (
       findTilData.title === editValue.title &&

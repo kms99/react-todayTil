@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Detail from "../pages/Detail";
@@ -11,6 +11,7 @@ import GlobalFont from "../styles/fonts";
 
 const Router = () => {
   const theme = useSelector((state) => state.Theme.theme);
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={Theme[theme]}>
